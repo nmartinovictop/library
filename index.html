@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class=top-nav>
+    <h1>Nick Library App</h1>
+    <button id="modal-btn"> click me, I make a modal</button>
+</div>
+
+<div class='shelf'>
+<div class='book'><h3>Book1</h3><p>Author</p><p>Pages</p><p>Read?</p><label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+  </label></div>
+<div class='book'><h3>Book2</h3><p>Author</p><p>Pages</p><p>Read?</p></div>
+<div class='book'><h3>Book2</h3><p>Author</p><p>Pages</p><p>Read?</p></div>
+<div class='book'><h3>Book2</h3><p>Author</p><p>Pages</p><p>Read?</p></div>
+<div class='book'><h3>Book2</h3><p>Author</p><p>Pages</p><p>Read?</p></div>
+
+</div>
+    
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form action="" class='addBook' onsubmit="return false">
+                <label for="title">Enter book title</label>
+                <input type="text" name='title' id='title' required>
+                <label for="author">Enter book author</label>
+                <input type="text" name='author' id='author' required>
+                <label for="pages">Enter number of pages</label>
+                <input type="text" name='pages' id='pages' required>
+                <label for="isRead">Book is read?</label>
+                <input type="text" name='isRead' id='isRead' required>
+                <input type="submit" value='Submit!' class='submit'>
+        
+            </form>
+        
+        </div>
+
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
