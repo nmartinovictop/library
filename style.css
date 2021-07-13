@@ -66,17 +66,42 @@
       height: 20vh;
       border: 1px solid black;
       margin: 1vh;
-      margin: calc((20vw - 24px)/8)
+      margin: calc((20vw - 24px)/8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* overflow: auto */
+
+
+  }
+
+  h3 {
+      margin-top: 5px
+  }
+
+  p {
+      margin: 0
+  }
+
+  .book > * {
+      text-align: center;
+      flex: 1 1 auto;
+  }
+
+  .toggle {
+      flex: 20 20 a
   }
 
 
+  
   /* For Toggle Switch */
   /* The switch - the box around the slider */
 .switch {
     position: relative;
-    display: inline-block;
+    display: block;
     width: 60px;
     height: 34px;
+    text-align: center;
   }
   
   /* Hide default HTML checkbox */
