@@ -19,3 +19,4 @@ CAPTURE:
 - Need to update the formatting of the modal
 - Need to style the new text
 - Add a pencil edit icon and allow users to edit the book after creation
+- make the book boxes square
