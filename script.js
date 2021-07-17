@@ -24,7 +24,7 @@ function htmlBook() {
 return `<h3 class="book-title"><span class="close-btn-title">×</span></h3><p class="book-author"></p><p class='book-pages'></p><p class='book-isRead'>Read?</p><div class="toggle"><label class="switch">
     <input type="checkbox" class='toggle-read'>
     <span class="slider"></span>
-  </label></div>`
+  </label>`
 
 }
 
@@ -39,17 +39,23 @@ function runner() {
 
 
 // Update Toggle
-// const toggleRead = document.querySelector('.toggle-read')
-// const slider = document.querySelector('.slider')
-// const toggle = document.querySelector('.toggle')
+const slider = document.querySelector('.slider')
+const toggle = document.querySelector('.toggle')
 const label = document.querySelector('.switch')
 
-// toggleRead.addEventListener('toggle', () => console.log('toggleRead'))
-// slider.addEventListener('toggle',() => console.log('slider'))
-// toggle.addEventListener('toggle',() => console.log('toggle'))
-label.addEventListener('click', (e) =>console.log(e))
-// const book = document.querySelector('.book')
-// book.addEventListener('click',() =>console.log('book'))
+
+const toggleRead = document.querySelector('.toggle-read')
+
+toggleRead.addEventListener('click', () => console.log('toggleRead'))
+slider.addEventListener('click',() => console.log('slider'))
+toggle.addEventListener('click',() => console.log('toggle'))
+label.addEventListener('click', (e) => console.log('label'))
+const book = document.querySelector('.book')
+book.addEventListener('click',() =>console.log('book'))
+
+// toggleRead.forEach(book => {
+//     book.addEventListener('click',() => console.log(this))
+// })
 
 
 form.addEventListener('submit',runner)
@@ -67,6 +73,10 @@ function addBookToShelf() {
     div.children[2].textContent = myLibrary[myLibrary.length-1].pages
 
     shelf.appendChild(div)
+
+    const toggleRead = div.querySelector('.toggle-read')
+    toggleRead.addEventListener('click',() => console.log(this))
+
 }
 
 function addAllBooksToShelf() {myLibrary.forEach(bookObj => {
@@ -79,6 +89,7 @@ let modalBtn = document.getElementById("modal-btn")
 let modal = document.querySelector(".modal")
 let closeBtn = document.querySelector(".close-btn")
 modalBtn.onclick = function(){
+    console.log(this)
   modal.style.display = "block"
 }
 closeBtn.onclick = function(){
