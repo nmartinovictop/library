@@ -1,5 +1,6 @@
 let myLibrary = [];
 
+
 function Book(title, author,pages,isRead) {
   this.title = title;
   this.author = author;
@@ -39,28 +40,25 @@ function runner() {
 
 
 // Update Toggle
-const slider = document.querySelector('.slider')
-const toggle = document.querySelector('.toggle')
-const label = document.querySelector('.switch')
+// const slider = document.querySelector('.slider')
+// const toggle = document.querySelector('.toggle')
+// const label = document.querySelector('.switch')
 
 
-const toggleRead = document.querySelector('.toggle-read')
+// const toggleRead = document.querySelector('.toggle-read')
 
-toggleRead.addEventListener('click', () => console.log('toggleRead'))
-slider.addEventListener('click',() => console.log('slider'))
-toggle.addEventListener('click',() => console.log('toggle'))
-label.addEventListener('click', (e) => console.log('label'))
-const book = document.querySelector('.book')
-book.addEventListener('click',() =>console.log('book'))
+// toggleRead.addEventListener('click', () => console.log('toggleRead'))
+// slider.addEventListener('click',() => console.log('slider'))
+// toggle.addEventListener('click',() => console.log('toggle'))
+// label.addEventListener('click', (e) => console.log('label'))
+// const book = document.querySelector('.book')
+// book.addEventListener('click',() =>console.log('book'))
 
-// toggleRead.forEach(book => {
-//     book.addEventListener('click',() => console.log(this))
-// })
+
+
 
 
 form.addEventListener('submit',runner)
-
-
 
 
 
@@ -68,14 +66,14 @@ function addBookToShelf() {
     const div = document.createElement('div')
     div.classList.add('book')
     div.innerHTML = htmlBook()
-    div.firstChild.textContent = myLibrary[myLibrary.length-1].title + div.firstChild.textContent
+    div.firstChild.innerHTML = myLibrary[myLibrary.length-1].title + div.firstChild.innerHTML
     div.children[1].textContent = myLibrary[myLibrary.length-1].author
     div.children[2].textContent = myLibrary[myLibrary.length-1].pages
 
     shelf.appendChild(div)
 
     const toggleRead = div.querySelector('.toggle-read')
-    toggleRead.addEventListener('click',() => console.log(this))
+    toggleRead.addEventListener('click',() => console.log(div.firstChild.textContent))
 
 }
 

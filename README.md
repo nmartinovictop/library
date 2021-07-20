@@ -1,6 +1,8 @@
 # library
 Library Project from TOP
 
+(Figure out how to write the correct text content line 69)
+
 Notes:
 - I need to figure out how to create a popup modal when I click on "add book"  (done)
 - I need to figure out how to use javascript with forms (done)
