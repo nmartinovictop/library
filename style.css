@@ -46,7 +46,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: gray;
+      background-color: #bfdbf7;
   }
 
   .top-nav > *  {
@@ -61,10 +61,21 @@
       flex-wrap: wrap;
   }
 
+  body {
+    background-color: #dee2ff;
+  }
+
+  .close-btn-title:hover {
+    color: blue;
+    transform: scale(1.1);
+    cursor: pointer;
+    
+  }
+
   .book {
       width: 20vw;
-      height: 20vh;
-      border: 1px solid black;
+      height: 20vw;
+      box-shadow: 0 0.05em 0.25em 0 rgba(0,0,0,0.5);
       margin: 1vh;
       margin: calc((20vw - 39px)/8);
       display: flex;
