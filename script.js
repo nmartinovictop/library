@@ -61,7 +61,10 @@ const isRead = document.querySelector('input[name="isRead"]:checked').value === 
 // book.addEventListener('click',() =>console.log('book'))
 
 
-
+if (localStorage.length > 0 ) {
+  myLibrary = JSON.parse(localStorage['library'])
+  addAllBooksToShelf()
+}
 
 
 form.addEventListener('submit',runner)
@@ -78,6 +81,7 @@ function addBookToShelf() {
     div.children[1].textContent = myLibrary[myLibrary.length-1].author
     div.children[2].textContent = myLibrary[myLibrary.length-1].pages
 
+    localStorage.setItem('library',JSON.stringify(myLibrary))
     const toggleRead = div.querySelector('.toggle-read')
     
     if (myLibrary[myLibrary.length-1].isRead) {
@@ -96,6 +100,8 @@ function deleteBookFunc() {
   const parent = this.closest('.book')
   const indexToDelete = (myLibrary.findIndex( (book) => book['title'] == parent.firstChild.firstChild.textContent))
   myLibrary.splice(indexToDelete,1)
+  localStorage.setItem('library',JSON.stringify(myLibrary))
+
   shelf.removeChild(parent)
 }
 
@@ -111,9 +117,28 @@ function changeReadStatus() {
 
 
 function addAllBooksToShelf() {myLibrary.forEach(bookObj => {
+
     const div = document.createElement('div')
     div.classList.add('book')
-    shelf.appendChild(div)
+    div.style.backgroundColor = COLORS[(myLibrary.findIndex( tbook => tbook == bookObj) + 1) % 4]
+    div.innerHTML = htmlBook()
+    // div.firstChild.innerHTML = myLibrary[myLibrary.length-1].title + div.firstChild.innerHTML
+    div.firstChild.insertAdjacentHTML('afterbegin',bookObj.title)
+    div.children[1].textContent = bookObj.author
+    div.children[2].textContent = bookObj.pages
+    const toggleRead = div.querySelector('.toggle-read')
+
+    if (bookObj.isRead) {
+      toggleRead.checked = true
+      }
+
+      shelf.appendChild(div)
+
+      toggleRead.addEventListener('click',changeReadStatus)
+  
+      const deleteBook = div.querySelector('.close-btn-title')
+      deleteBook.addEventListener('click',deleteBookFunc)
+
 })}
 
 let modalBtn = document.getElementById("modal-btn")
