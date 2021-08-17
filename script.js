@@ -6,15 +6,28 @@ const COLORS = ['#cbc0d3','#EFD3D7','#FEEAFA','#32CBFF']
 
 
 
-function Book(title, author,pages,isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead
-}
+// function Book(title, author,pages,isRead) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.isRead = isRead
+// }
 
-function addBookToLibrary(title,author,pages,isRead) {
-  myLibrary.push(new Book(title,author,pages,isRead))
+// function addBookToLibrary(title,author,pages,isRead) {
+//   myLibrary.push(new Book(title,author,pages,isRead))
+// }
+
+class Book {
+  constructor(title, author,pages,isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead
+  }
+  
+  addBookToLibrary(title,author,pages,isRead) {
+    myLibrary.push(new Book(title,author,pages,isRead))
+  }
 }
 
 
@@ -42,7 +55,6 @@ const isRead = document.querySelector('input[name="isRead"]:checked').value === 
     modal.style.display = "none"
     addBookToShelf()
 }
-
 
 
 // Update Toggle
@@ -156,3 +168,6 @@ window.onclick = function(e){
     modal.style.display = "none"
   }
 }
+
+
+
